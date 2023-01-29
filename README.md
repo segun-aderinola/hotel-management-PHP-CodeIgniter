@@ -1,4 +1,4 @@
-## **Hotel Management System in CodeIgniter 3**
+## **Rosepearl Hotel Management System in CodeIgniter 3**
 ==========================================================
 
 ### Recommended PHP Version
@@ -8,12 +8,12 @@
 ### **Developement Information**
 ==========================================================
 #### ** Original Version**
-- **Developed/Published By:** Akki Sharma
-- **Uploaded/Published at:** [https://www.kashipara.com/project/codeigniter-php/1684/hotel-management-app-codeigniter-php-project-code](https://www.kashipara.com/project/codeigniter-php/1684/hotel-management-app-codeigniter-php-project-code) 
+- **Developed/Published By:** Segun Aderinola
+- **Uploaded/Published at:** [https://www.rosepearlhotel.com.ng/](https://www.rosepearlhotel.com.ng/)
 ==========================================================
 #### ** Upgraded/Customization Version**
-- **Upgraded and Modified By:** oretnom23
-- **Published at:** [https://sourcecodester.com/php-codeigniter-hotel-management-system-source-code](https://sourcecodester.com/php-codeigniter-hotel-management-system-source-code) 
+- **Upgraded and Modified By:** segun-aderinola
+- **Published at:** [https://www.rosepearlhotel.com.ng/](https://www.rosepearlhotel.com.ng/) 
 
 #### **Modification Information**
 - upgraded the CodeIgniter Core System to CI_VERSION == 3.1.13
