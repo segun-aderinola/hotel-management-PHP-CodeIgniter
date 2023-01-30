@@ -204,7 +204,7 @@ exit(0);
 		$this->load->view('footer');
 	}
 
-public function checkout($reservation_id){
+	public function checkout($reservation_id){
 		$this->check_login();
 
 		$status = 'out';

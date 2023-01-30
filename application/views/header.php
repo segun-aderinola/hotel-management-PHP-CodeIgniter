@@ -86,7 +86,7 @@
 
                <li <?php if($page == "customer/active"){ echo 'class="active"'; } ?>><a href="<?= base_url() ?>customer/active"><i class="icon-user"></i><span>Checkedin Clients</span> </a> </li>
                 <?php if(EMPLOYEE_TYPE === 'Admin'){ ?>
-               <li <?php if($page == "transaction/active"){ echo 'class="active"'; } ?>><a href="#"><i class="icon-money"></i><span>Transaction History</span> </a> </li>  <?php } ?>
+               <li <?php if($page == "transactions"){ echo 'class="active"'; } ?>><a href="<?= base_url() ?>transactions/"><i class="icon-money"></i><span>Transaction History</span> </a> </li>  <?php } ?>
 
              
             </ul>

@@ -76,6 +76,8 @@ class Room_m extends CI_Model {
         return $query->result();
     }
 
+   
+
     function getRoomSale($room_id)
     {
         $query = $this->db->get_where('room_sales', array('room_id' => $room_id));
@@ -101,8 +103,8 @@ class Room_m extends CI_Model {
 
 
     function addRoomRange($room_type, $room_number) {
-        
-    
+       
+   
         $data = array('room_type' => $room_type, 'room_id' => $room_number);
 
         $this->db->insert('room', $data);

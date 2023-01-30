@@ -30,8 +30,6 @@
     
      $('#tables').DataTable();
 
-    
-
   })
 </script>
 <?php
@@ -152,7 +150,15 @@ if($page == "reservation" ) {
 
     </script><!-- /Calendar -->
    
-<?php } ?>
+<?php }
+  else if($page == 'Transactions'){ ?>
+        <script>
+          $(document).ready(function()=>{
+            $('.datepicker').datepicker();
+          })
+        </script>
+  <?php }
+?>
     <style type="text/css">
     .calendar{-webkit-user-select: none; -moz-user-select: none;}
     </style>
