@@ -10,7 +10,7 @@ class Transactions extends CI_Controller {
 			redirect("login");
 	} 
 
-	public function transactions()
+	public function history()
 	{
 		$this->check_login();
 		$viewdata = [];
