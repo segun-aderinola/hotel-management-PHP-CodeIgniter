@@ -16,6 +16,8 @@
 				    <th> Room Type </th>
 				    <th> Checked In </th>
 				    <th> Checked Out </th>
+				    <th> Amount Paid (&#8358;)</th>
+
 				   
 				    <th> Status </th>
 				    <th class="td-actions"> Actions </th>
@@ -47,6 +49,8 @@
 				    
 				    <td> <b> Date:</b> <?= $reservation[$x]->checkout_date  ?> <br>
 				    	<b> Time: </b> <?= $reservation[$x]->time_out ?></td>
+					<td><?= number_format($reservation[$x]->reservation_price) ?></td>
+
 				    <td style="text-transform: uppercase;"><?= $reservation[$x]->status  ?></td>
 
 				  

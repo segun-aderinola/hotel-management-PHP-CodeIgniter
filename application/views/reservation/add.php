@@ -37,7 +37,8 @@
 
         <div class="field">
           <label for="room_type">Room Type:</label>
-          <select id="room_type" name="room_type">
+          <select id="room_type" class="room_types" name="room_type">
+            <option disabled selected value= "">-- Select Room Type -- </option>
           <?php
             foreach ($room_types as $k=>$rt) {
               ?>
@@ -47,16 +48,17 @@
           ?>
          </select>
         </div> <!-- /field -->
+        <!-- amount to be paid -->
         
         <div class="field">
           <label for="checkin_date">Check-in Date:</label>
-          <input type="date" id="checkin_date" name="checkin_date" required value=""/>
+          <input type="date" id="checkin_date" class="" name="checkin_date" required value=""/>
         </div> <!-- /field -->
-
         <div class="field">
           <label for="checkout_date">Check-out Date:</label>
           <input type="date" id="checkout_date" name="checkout_date" required value=""/>
         </div> <!-- /field -->
+        <p id="error-message"></p>
 
       
         <div class="field">
@@ -69,11 +71,27 @@
           </select>
         </div> <!-- /field -->
 
+        <div id="discount-panel">
+          <input type="checkbox" id="discount_check" /> Apply Discount
+
+          <div id="discount-panel-inner">
+            <p style="margin-top:10px;color:darkred;">Discount (%)</p>
+              <input type="text" id="discount" placeholder="Apply Discount" onkeypress="return onlyNumberKey(event)"/>
+            </div>
+        </div>
+
+        <input type="text" id="total_amount" name="total_amount" />
+        <input type="text" id="amount_before" style="display:none;"/>
+        <div class="alert alert-primary" style="font-size:16px;">Total amount payable &#8358;<span id="amount"></span>
+      <br>
+            
+      </div>
       </div> <!-- /login-fields --> <br>
       
+
       <div class="login-actions">
         
-        <button class="button btn btn-success btn-large">List Available</button>
+        <button class="button btn btn-success btn-medium">List Available</button>
         
       </div> <!-- .actions -->
       
@@ -89,7 +107,7 @@
         <!-- /widget -->
         <div class="widget widget-nopad">
           <div class="widget-header"> <i class="icon-list-alt"></i>
-            <h3> Reservation</h3>
+            <h3> Reservation </h3>
           </div>
           <!-- /widget-header -->
           <div class="widget-content">

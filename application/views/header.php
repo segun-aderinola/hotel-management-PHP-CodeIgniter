@@ -85,8 +85,13 @@
                <li <?php if($page == "attendance"){ echo 'class="active"'; } ?>><a href="<?= base_url() ?>attendance"><i class="icon-time"></i><span>Attendance</span> </a> </li>
 
                <li <?php if($page == "customer/active"){ echo 'class="active"'; } ?>><a href="<?= base_url() ?>customer/active"><i class="icon-user"></i><span>Checkedin Clients</span> </a> </li>
-                <?php if(EMPLOYEE_TYPE === 'Admin'){ ?>
-               <li <?php if($page == "transactions"){ echo 'class="active"'; } ?>><a href="<?= base_url() ?>transactions/"><i class="icon-money"></i><span>Transaction History</span> </a> </li>  <?php } ?>
+                <?php if(EMPLOYEE_TYPE === 'Admin'){ 
+                  
+                  ?>
+               <li <?php if($page == "transactions"){ echo 'class="active"'; } ?>><a href="<?= base_url() ?>transactions/"><i class="icon-money"></i><span>Transaction History</span> </a> </li>  
+               <li <?php if($page == "services"){ echo 'class="active"'; } ?>><a href="<?= base_url() ?>services/"><i class="icon-tasks"></i><span>Services</span> </a> </li>  
+               
+               <?php } ?>
 
              
             </ul>

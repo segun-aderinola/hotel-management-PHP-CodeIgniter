@@ -43,6 +43,9 @@ $route['room-type'] = "room_type";
 $route['room-type/(:any)'] = "room_type/$1";
 $route['404_override'] = '';
 
+$route['ajax-request'] = 'Reservation/getAmount';
+// $routes->get('/', 'reservation');
+// $route['ajax-requestPost']['post'] = 'ItemController/ajaxRequestPost';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

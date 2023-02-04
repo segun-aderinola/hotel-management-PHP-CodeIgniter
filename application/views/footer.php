@@ -2,7 +2,7 @@
   <div class="footer-inner">
     <div class="container">
       <div class="row">
-        <div class="span12"> &copy; <?= date('Y') ?> <a href="https://sourcecodester.com/">Hotel Management System - CI Version <?= CI_VERSION ?></a>. <span class="pull-right">Version 2.0</span> </div>
+        <div class="span12"> &copy; <?= date('Y') ?> <a href="#">Hotel Management System - CI Version <?= CI_VERSION ?></a>. <span class="pull-right">Version 2.0</span> </div>
         <!-- /span12 --> 
       </div>
       <!-- /row --> 
@@ -37,6 +37,99 @@ if($page == "reservation" ) {
 ?>
 <script type="text/javascript">
 
+function onlyNumberKey(evt) {              
+  var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+  if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+      return false;
+  return true;
+}
+
+
+$(document).ready(function(){ 
+
+  $('.alert-primary').css('display','none');
+  $('#total_amount').css('display','none');
+  $("#discount-panel").css('display','none');
+  $("#discount-panel-inner").css('display','none');
+
+
+  
+
+  $('#discount_check').on('click', function(){
+    if($('#discount_check').prop('checked') == true){
+      $("#discount-panel-inner").css('display','block');
+      $('#discount').prop('required', true);
+  }
+  else{
+
+    $("#discount").css('display','block').prop('required', false).val('');
+    $("#discount-panel-inner").css('display','none');
+    let amount_before = $("#amount_before").val();
+    $('#total_amount').val(amount_before);
+    $('#amount').html(amount_before.toLocaleString('en-US'));
+
+
+  }
+  });
+
+  $('#discount').on("blur", function(){
+    let discount = $(this).val();
+    let total_amount = $("#total_amount").val();
+    let discount_apply = total_amount - (discount/100) * total_amount;
+    
+    $("#total_amount").val(discount_apply);
+    $('#amount').html(discount_apply.toLocaleString('en-US'));
+
+  })
+
+
+$(".room_types").change(function(){
+  $("#discount-panel-inner").css('display','none');
+  $(".alert-primary").css('display','none');
+  $('#discount_check').prop('checked', false);
+  
+})
+
+
+
+
+  $('#checkout_date').on('blur', function(){
+    
+    let checkin_date = $('#checkin_date').val();
+
+    let checkout_date = $(this).val();
+
+    if(checkin_date == ''){
+      $('#error-message').html = 'select checkin date';
+    }
+    else{
+
+    let room_type = $('#room_type').val();
+    
+    $.ajax({
+      url: "<?php echo site_url()?>/reservation/getAmount",
+      type: 'POST',
+      dataType:'JSON',
+      data:{data:{
+        in_date: checkin_date,
+        out_date: checkout_date,
+        type_room: room_type
+      }},
+      success:function(data){
+        $('.alert-primary').css('display','block');
+       $("#discount-panel").css('display','block');
+
+          $('#amount').html(data['price'].toLocaleString('en-US'));
+          $('#total_amount').val(data['price']);
+          $('#amount_before').val(data['price']);
+      }  
+    })
+  }
+  });
+
+
+
+});
 
 
   function date2str(date) {

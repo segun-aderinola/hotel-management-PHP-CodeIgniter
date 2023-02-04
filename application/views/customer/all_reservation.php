@@ -50,7 +50,7 @@
 				    <td class="td-actions">
 				    	<a href="<?= base_url() ?>reservation/edit/<?=$reservation[$x]->reserve_id?>" class="btn btn-small btn-success">&nbsp;&nbsp;<i class="btn-icon-only icon-book"> Update</i> 
 				    </a> <br>
-					<a href="<?= base_url() ?>reservation/receipt/<?=$reservation[$x]->reserve_id?>" target="_blank" class="btn btn-small btn-primary">&nbsp;&nbsp;<i class="btn-icon-only icon-download"> Print Receipt </i>
+					<a href="<?= base_url() ?>reservation/receipt/<?=$reservation[$x]->reserve_id?>" target="_blank" class="btn btn-small btn-primary">&nbsp;&nbsp;<i class="btn-icon-only icon-download"> Print Receipt </i> </a>
 					 <br>
 				     <?php 
 				    	if($reservation[$x]->status == 'in'){

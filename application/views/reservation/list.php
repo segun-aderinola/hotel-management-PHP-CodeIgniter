@@ -39,6 +39,11 @@
 					<label for="payment_method">Payment Method:</label>
 					<input type="text" id="payment_method" name="payment_method" required readonly value="<?=$payment_method?>"/>
 				</div> <!-- /field -->
+
+				<div class="field">
+					<label for="payment_method">Total Amount Paid:</label>
+					<input type="text" id="total_amount_paid" name="total_amount_paid" required readonly value="<?=$total_amount?>"/>
+				</div> <!-- /field -->
 					
 			</div> <!-- /login-fields -->
 				<div class="row">

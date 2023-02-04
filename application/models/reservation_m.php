@@ -39,13 +39,16 @@ class Reservation_m extends CI_Model {
         return $result;
     } 
 
-    function getReservation_by_date($date)
+    function getReservation_by_date($start_date, $end_date)
     {
-        $query = $this->db->get_where('reservation', array('checkin_date' => $date));
-       
-        $result = $query->result();
-        // $tx = mysqli_fetch_array($result);
-        return $result;
+        
+        $this->db->select("*");
+        $this->db->from('reservation');
+        $this->db->where("DATE_FORMAT(checkin_date,'%Y-%m-%d') >='$start_date'");
+        $this->db->where("DATE_FORMAT(checkin_date,'%Y-%m-%d') <='$end_date'");
+        $query = $this->db->get();
+        return $query->result();
+
     } 
 
 
