@@ -1,4 +1,4 @@
-## **Rosepearl Hotel Management System in CodeIgniter 3**
+## **Hotel Management System in CodeIgniter 3**
 ==========================================================
 
 ### Recommended PHP Version
